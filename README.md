@@ -1,1 +1,3 @@
 # PracGitJava
+
+learning git and github is fun...yeaaaah...
