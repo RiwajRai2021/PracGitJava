@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+</head>
+
+<body>
+
+
+<div th:insert="header.html"></div>
+
+<form style="padding-left:250px; padding-top:50px" action="/employee" method="post" th:object="${emodel}">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">First Name</label>
+      <input type="text" th:field="*{fname}"class="form-control" id="validationDefault01" placeholder="firstname">
+    </div>
+   </div>
+   
+   <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">Last Name</label>
+      <input type="text" th:field="*{lname}"class="form-control" id="validationDefault01" placeholder="lastname">
+    </div>
+   </div>
+
+
+		<div class="form-row">
+			<div class="col-md-4 mb-3">
+				<label for="inputEmail4">Gender</label> 
+				
+				<div class="form-check">
+				
+				<input th:field="*{gender}"class="form-check-input" type="radio" name="exampleRadios"
+					id="exampleRadios1" value="gender" checked> <label
+					class="form-check-label" for="exampleRadios1">Male</label>
+			</div>
+			
+			<div class="form-check">
+				
+				<input th:field="*{gender}"class="form-check-input" type="radio" name="exampleRadios"
+					id="exampleRadios1" value="female" checked> <label
+					class="form-check-label" for="exampleRadios1">Female</label>
+			</div>
+		</div>
+	</div>
+		<div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">DOB</label>
+      <input type="date" th:field="*{dob}"class="form-control" id="validationDefault01" placeholder="DOB">
+    </div>
+   </div>
+   
+   <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">Join Date</label>
+      <input type="date" th:field="*{joinDate}"class="form-control" id="validationDefault01" placeholder="Join Date">
+    </div>
+   </div>
+   
+   <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">Phone</label>
+      <input type="text" th:field="*{phone}"class="form-control" id="validationDefault01" placeholder="Phone">
+    </div>
+   </div>
+   
+    <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">Email</label>
+      <input type="email" th:field="*{email}"class="form-control" id="validationDefault01" placeholder="Email">
+    </div>
+   </div>
+   
+    <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">Company</label>
+      <input type="text" th:field="*{company}"class="form-control" id="validationDefault01" placeholder="company">
+    </div>
+   </div>
+   <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">Post</label>
+      <input type="text" th:field="*{post}"class="form-control" id="validationDefault01" placeholder="post">
+    </div>
+   </div>
+   
+    <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">Salary</label>
+      <input type="text" th:field="*{salary}"class="form-control" id="validationDefault01" placeholder="salary">
+    </div>
+   </div>
+   
+   <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">Country</label>
+      <input type="text" th:field="*{address.country}"class="form-control" id="validationDefault01" placeholder="country">
+    </div>
+   </div>
+   <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">City</label>
+      <input type="text" th:field="*{address.city}"class="form-control" id="validationDefault01" placeholder="city">
+    </div>
+   </div>
+   
+   <div class="form-row">
+    <div class="col-md-6 mb-3">
+ 
+				<div class="form-group col-md-6">
+					<label for="inputState">State</label> 
+					<select th:field="*{address.state}"id="inputState" class="form-control">
+						<option value="#">------Select State------</option>
+						<option th:value="state-1">State-1</option>
+						<option th:value="state-2">State-2</option>
+						<option th:value="state-3">State-3</option>
+						<option th:value="state-4">State-4</option>
+						<option th:value="state-5">State-5</option>
+						<option th:value="state-6">State-6</option>
+						<option th:value="state-7">State-7</option>
+					</select>
+				</div>
+
+
+			</div>
+   </div>
+   
+   <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="inputEmail4">zipCode</label>
+      <input type="text" th:field="*{address.zipcode}"class="form-control" id="validationDefault01" placeholder="zip code">
+    </div>
+   </div>
+   
+   
+   
+ 
+  <button type="submit" class="btn btn-primary">Update</button>
+  
+  <input type="hidden"  th:field="*{id}">
+  
+</form>
+</body>
+</html>

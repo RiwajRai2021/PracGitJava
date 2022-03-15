@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+	<div th:insert="header.html"></div>
+
+	<table id="myTable" class="table table-stripted">
+
+		<thead >
+		<tr class="success">
+			<td>FirstName</td>
+			<td>LastName</td>
+			<td>Phone</td>
+			<td>Company</td>
+			<td>City</td>
+			<td>Country</td>
+			<td>Action</td>
+
+		</tr>
+		</thead>
+		
+		<tbody>
+
+			<tr th:each="emp:${elist}">
+				<td th:text="${emp.fname}"></td>
+				<td th:text="${emp.lname}"></td>
+				<td th:text="${emp.phone}"></td>
+				<td th:text="${emp.company}"></td>
+				<td th:text="${emp.address.city}"></td>
+				<td th:text="${emp.address.country}"></td>
+				<td><a th:href="@{'/edit/'+${emp.id}}"><input class="btn btn-success" type="submit"
+						value="Edit"></a> 
+						<a th:href="@{'/delete/'+${emp.id}}"><input class="btn btn-danger"
+						type="submit" value="Delete"></a></td>
+
+			</tr>
+
+		</tbody>
+	</table>
+
+<script type="text/javascript">
+	$(document).ready( function () { $('#myTable').DataTable(); } );
+	
+</script>
+</body>
+</html>
+</body>
+</html>

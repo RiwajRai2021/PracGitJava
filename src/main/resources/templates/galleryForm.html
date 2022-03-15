@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div th:insert="header.html"></div>
+
+	<span th:each="imgname : ${imgNameList}"> 
+	
+	<a th:href="@{'/imgs/'+${imgname}}" target = "_blank">
+	
+	<img alt="${imgname}" th:src="@{'/imgs/'+${imgname}}" width="300px" style="padding-bottom: 5px">
+
+	</a>
+	</span>
+
+</body>
+</html>
